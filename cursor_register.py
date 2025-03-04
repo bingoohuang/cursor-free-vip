@@ -215,10 +215,13 @@ class CursorRegistration:
             # Save account information to file
             with open('cursor_accounts.txt', 'a', encoding='utf-8') as f:
                 f.write(f"\n{'='*50}\n")
+                f.write(f"First Name: {self.first_name}\n")
+                f.write(f"Last Name: {self.last_name}\n")
                 f.write(f"Email: {self.email_address}\n")
                 f.write(f"Password: {self.password}\n")
                 f.write(f"Token: {token}\n")
                 f.write(f"Usage Limit: {total_usage}\n")
+                f.write(f"Updated at: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}\n")
                 f.write(f"{'='*50}\n")
                 
             print(f"{Fore.GREEN}{EMOJI['SUCCESS']} {self.translator.get('register.account_info_saved')}...{Style.RESET_ALL}")
